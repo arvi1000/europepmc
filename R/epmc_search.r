@@ -104,7 +104,10 @@ epmc_search <- function(query = NULL,
   hits <- epmc_hits(query, synonym = synonym)
   if (hits == 0) {
     message("There are no results matching your query")
-    md <- NULL
+    # return an empty tibble
+    md <- tibble::tibble()
+    # populate the hit_count attribute even with zero results
+    attr(md, "hit_count") <- hits
   } else {
     limit <- as.integer(limit)
     limit <- ifelse(hits <= limit, hits, limit)
