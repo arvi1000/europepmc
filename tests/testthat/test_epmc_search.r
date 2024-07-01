@@ -31,19 +31,19 @@ test_that("epmc_search returns", {
   expect_is(k, "list")
   expect_is(l, "data.frame")
 
-  #are diminsions correct?
+  # are dimensions correct?
   expect_equal(nrow(e), 250)
   expect_equal(ncol(e), 4)
   expect_equal(nrow(f), 25)
   expect_equal(nrow(h), 100)
   expect_equal(length(i), 125)
+  expect_equal(nrow(j), 0)
   expect_equal(nrow(l), 100)
 
 
   # fails correctly
   expect_message(epmc_search("123haha"),
                  "There are no results matching your query")
-  expect_null(j)
   expect_error(epmc_search(query = "malaria", limit = TRUE))
   expect_error(epmc_search(query = "malaria", verbose = "kdk"))
   expect_error(epmc_search(query = "malaria", synonym = "yes"))
