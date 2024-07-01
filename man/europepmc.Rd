@@ -2,8 +2,8 @@
 % Please edit documentation in R/europepmc.r
 \docType{package}
 \name{europepmc}
-\alias{europepmc}
 \alias{europepmc-package}
+\alias{europepmc}
 \title{europepmc - an R client for the Europe PMC RESTful article API}
 \description{
 What is europepmc?:

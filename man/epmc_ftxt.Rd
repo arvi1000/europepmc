@@ -2,7 +2,7 @@
 % Please edit documentation in R/epmc_ftxt.r
 \name{epmc_ftxt}
 \alias{epmc_ftxt}
-\title{Fetch Europe PMC full texts}
+\title{Fetch Europe PMC full text}
 \usage{
 epmc_ftxt(ext_id = NULL)
 }
@@ -14,7 +14,7 @@ All full text publications have external IDs starting 'PMC_'}
 xml_document
 }
 \description{
-This function loads full texts into R. Full texts are in XML format and are
+This function loads one full text into R. Full text is in XML format and is
 only provided for the Open Access subset of Europe PMC.
 }
 \examples{
