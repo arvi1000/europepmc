@@ -2,7 +2,10 @@ context("testing epmc_db")
 
 test_that("epmc_db returns", {
   skip_on_cran()
-  a <- epmc_db("12368864", db = "uniprot", limit = 50)
+  # as of July 2024, this result only returns 10 results, so limit must
+  # be <= that
+  a_limit <- 7
+  a <- epmc_db("12368864", db = "uniprot", limit = a_limit)
   b <- epmc_db("25249410", db = "embl")
   c <- epmc_db("14756321", db = "uniprot")
   d <- epmc_db("11805837", db = "pride")
@@ -31,7 +34,7 @@ test_that("epmc_db returns", {
 
 
 
-  expect_equal(nrow(a), 50)
+  expect_equal(nrow(a), a_limit)
 
   # fails correctly
   expect_error(epmc_db("14756321"), "Please restrict reponse to a database")
